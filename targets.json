@@ -1,0 +1,42 @@
+[
+  {
+    "id": "local-demo",
+    "url": "http://localhost:8000/",
+    "notes": "Local demo server"
+  },
+  {
+    "url": "http://localhost:8000/",
+    "id": "http://localhost:8000/",
+    "notes": ""
+  },
+  {
+    "url": "http://localhost:8000/",
+    "id": "http://localhost:8000/",
+    "notes": ""
+  },
+  {
+    "url": "http://localhost:8000/",
+    "id": "http://localhost:8000/",
+    "notes": ""
+  },
+  {
+    "url": "http://localhost:8000/",
+    "id": "http://localhost:8000/",
+    "notes": ""
+  },
+  {
+    "url": "http://localhost:8000/",
+    "id": "http://localhost:8000/",
+    "notes": ""
+  },
+  {
+    "url": "http://localhost:8000/",
+    "id": "http://localhost:8000/",
+    "notes": ""
+  },
+  {
+    "url": "http://localhost:8000/",
+    "id": "http://localhost:8000/",
+    "notes": ""
+  }
+]

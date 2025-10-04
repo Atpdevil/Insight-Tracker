@@ -1,0 +1,12 @@
+{
+  "local-demo": {
+    "hash": "0d76082f1a2e3a49da95deb358f3a3681fcd577835576393c4a003f28dbcfc51",
+    "text": "Demo Site Version 1 Hello",
+    "last_seen": 1759570052.625715
+  },
+  "http://localhost:8000/": {
+    "hash": "0d76082f1a2e3a49da95deb358f3a3681fcd577835576393c4a003f28dbcfc51",
+    "text": "Demo Site Version 1 Hello",
+    "last_seen": 1759570095.8050725
+  }
+}

@@ -1,0 +1,8 @@
+[2025-10-04 14:27:30] local-demo http://localhost:8000/ -> Alert:Version 2 Newly launched
+[2025-10-04 14:27:32] local-demo http://localhost:8000/ -> Alert:Version 2 Newly launched
+[2025-10-04 14:27:32] local-demo http://localhost:8000/ -> Error: Retry attempts exceeded.
+[2025-10-04 14:27:32] local-demo http://localhost:8000/ -> Alert:Version 2 Newly launched
+[2025-10-04 14:28:13] http://localhost:8000/ http://localhost:8000/ -> Alert:Version 2 Newly launched
+[2025-10-04 14:28:14] http://localhost:8000/ http://localhost:8000/ -> Alert:Version 2 Newly launched
+[2025-10-04 14:28:15] http://localhost:8000/ http://localhost:8000/ -> Alert:Version 2 Newly launched
+[2025-10-04 14:28:15] http://localhost:8000/ http://localhost:8000/ -> Error: Retry attempts exceeded.

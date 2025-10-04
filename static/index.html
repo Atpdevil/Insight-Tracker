@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>IntelAgent — Dashboard</title>
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;max-width:900px;margin:24px auto;padding:0 12px}
+    input,button{padding:8px;margin:6px}
+    #alerts{white-space:pre-wrap;background:#f8f8f8;padding:12px;border-radius:6px;border:1px solid #eee;min-height:120px}
+    ul{padding-left:18px}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 0 12px;
+  background: #f4f4f9;
+  color: #333;
+}
+input, button {
+  padding: 8px;
+  margin: 6px 4px 6px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+button:hover {
+  cursor: pointer;
+  background: #0073e6;
+  color: #fff;
+  border: 1px solid #0073e6;
+}
+#alerts {
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  min-height: 150px;
+  max-height: 300px;
+  overflow-y: auto;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+ul {
+  padding-left: 18px;
+}
+  </style>
+</head>
+<body>
+  <h1>IntelAgent — Dashboard</h1>
+
+  <div>
+    <input id="url" placeholder="http://localhost:8000/">
+    <button id="addBtn">Add target</button>
+    <button id="runBtn">Run check now</button>
+    <button id="startBtn">Start auto (30s)</button>
+    <button id="stopBtn">Stop auto</button>
+    <button id="clearBtn">Clear Alerts</button>
+  </div>
+
+  <h3>Tracked Targets</h3>
+  <ul id="targets"></ul>
+
+  <h3>Recent Alerts</h3>
+  <div id="alerts">No alerts yet.</div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
+
