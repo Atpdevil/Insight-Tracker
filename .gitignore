@@ -1,1 +1,4 @@
 .env
+alerts.log
+targets.json
+state.json

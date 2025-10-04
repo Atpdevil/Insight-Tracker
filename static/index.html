@@ -4,45 +4,58 @@
   <meta charset="utf-8">
   <title>IntelAgent — Dashboard</title>
   <style>
-    body{font-family:Arial,Helvetica,sans-serif;max-width:900px;margin:24px auto;padding:0 12px}
-    input,button{padding:8px;margin:6px}
-    #alerts{white-space:pre-wrap;background:#f8f8f8;padding:12px;border-radius:6px;border:1px solid #eee;min-height:120px}
-    ul{padding-left:18px}
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  max-width: 900px;
-  margin: 24px auto;
-  padding: 0 12px;
-  background: #f4f4f9;
-  color: #333;
+    body {
+  background: linear-gradient(135deg, #0d0d1a, #1a1f3b);
+  color: #e4e4f7;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
 }
-input, button {
-  padding: 8px;
-  margin: 6px 4px 6px 0;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  font-size: 14px;
+
+h1, h2 {
+  color: #9d8cff; /* soft purple heading */
+  text-shadow: 0 0 8px rgba(157, 140, 255, 0.6);
+}
+
+button {
+  background: linear-gradient(90deg, #2af598, #009efd);
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  margin: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
 }
 button:hover {
-  cursor: pointer;
-  background: #0073e6;
-  color: #fff;
-  border: 1px solid #0073e6;
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(0, 238, 255, 0.6);
 }
-#alerts {
-  background: #fff;
-  padding: 16px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  min-height: 150px;
+
+.alerts-box {
+  background: rgba(20, 20, 35, 0.9);
+  border-left: 4px solid #00f7ff;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 10px;
+  color: #b8e6ff;
+  font-family: monospace;
+  box-shadow: 0 0 12px rgba(0, 247, 255, 0.2);
   max-height: 300px;
   overflow-y: auto;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  font-family: monospace;
-  white-space: pre-wrap;
 }
-ul {
-  padding-left: 18px;
+
+.alerts-box p {
+  margin: 6px 0;
+}
+
+.timestamp {
+  color: #2af598; /* neon green */
+  font-weight: bold;
+}
+.message {
+  color: #e4e4f7;
 }
   </style>
 </head>
