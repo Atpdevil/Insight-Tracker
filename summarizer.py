@@ -39,4 +39,4 @@ def summarize_change(prev_text: str, new_text: str) -> str:
             print("OpenAI API error:", e)
             return "Error: Unable to summarize changes."
     
-    return "Alert:Version 2 Newly launched"
+    return "Error: Out of retries due to rate limiting."
