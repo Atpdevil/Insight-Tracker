@@ -31,17 +31,21 @@ h1 {
 
 .controls {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
+  flex-wrap: nowrap;
   gap: 12px;
   margin-bottom: 25px;
+  overflow-x: auto;
+  padding-bottom: 10px;
 }
 
 .controls input {
   padding: 12px;
   border: none;
   border-radius: 10px;
-  width: 280px;
+  width: 240px;
   font-size: 1rem;
   outline: none;
   box-shadow: 0 0 8px rgba(255,255,255,0.15);
@@ -97,6 +101,34 @@ ul li {
   overflow-y: auto;
   white-space: pre-wrap;
 }
+
+#toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.toast {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 12px 18px;
+  margin-top: 10px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  box-shadow: 0 0 10px rgba(0,255,255,0.4);
+  animation: slideIn 0.3s ease, fadeOut 0.5s ease 2.8s forwards;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; transform: translateY(-10px); }
+}
   </style>
 
 </head>
@@ -107,12 +139,12 @@ ul li {
     <h1>InsightTracker — Dashboard</h1>
 
     <div class="controls">
-      <input id="url" placeholder="http://localhost:8000/">
+      <input id="url" placeholder="https://example.com/">
       <button id="addBtn">Add target</button>
       <button id="runBtn">Run check now</button>
-      <button id="startBtn">Start auto (30s)</button>
+      <button id="startBtn">Start auto</button>
       <button id="stopBtn">Stop auto</button>
-      <button id="clearBtn">Clear Alerts</button>
+      <button id="clearBtn">Clear Alerts and Targets</button>
     </div>
 
     <h3>Tracked Targets</h3>
@@ -123,6 +155,8 @@ ul li {
 
   </div>
 
-  <script src="/static/app.js"></script>
+  <div id="toast-container"></div>
+  <script src="/static/app.js?v=12345"></script>
+
 </body>
 </html>
