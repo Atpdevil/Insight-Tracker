@@ -3,81 +3,126 @@
 <head>
   <meta charset="utf-8">
   <title>InsightTracker — Dashboard</title>
+
   <style>
-    body {
+body {
   background: linear-gradient(135deg, #0d0d1a, #1a1f3b);
   color: #e4e4f7;
   font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: center;
 }
 
-h1, h2 {
-  color: #9d8cff; /* soft purple heading */
-  text-shadow: 0 0 8px rgba(157, 140, 255, 0.6);
+.container {
+  width: 95%;
+  max-width: 900px;
+  padding: 40px 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #b7a7ff;
+  font-size: 2.4rem;
+  text-shadow: 0 0 15px rgba(157, 140, 255, 0.7);
+  margin-bottom: 30px;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.controls input {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  width: 280px;
+  font-size: 1rem;
+  outline: none;
+  box-shadow: 0 0 8px rgba(255,255,255,0.15);
 }
 
 button {
   background: linear-gradient(90deg, #2af598, #009efd);
   border: none;
   color: white;
-  padding: 10px 16px;
-  margin: 8px;
+  padding: 10px 18px;
   border-radius: 10px;
   cursor: pointer;
   font-weight: bold;
   transition: 0.2s;
+  font-size: 0.95rem;
 }
 button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 12px rgba(0, 238, 255, 0.6);
+  transform: translateY(-3px);
+  box-shadow: 0 0 14px rgba(0, 238, 255, 0.6);
+}
+
+h3 {
+  color: #9d8cff;
+  text-shadow: 0 0 6px rgba(157, 140, 255, 0.5);
+  margin-top: 25px;
+  margin-bottom: 12px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  background: rgba(255,255,255,0.04);
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  box-shadow: 0 0 6px rgba(255,255,255,0.07);
 }
 
 .alerts-box {
   background: rgba(20, 20, 35, 0.9);
-  border-left: 4px solid #00f7ff;
-  padding: 15px;
-  margin: 20px 0;
-  border-radius: 10px;
+  border-left: 5px solid #00f7ff;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 247, 255, 0.25);
   color: #b8e6ff;
   font-family: monospace;
-  box-shadow: 0 0 12px rgba(0, 247, 255, 0.2);
-  max-height: 300px;
+  max-height: 350px;
   overflow-y: auto;
-}
-
-.alerts-box p {
-  margin: 6px 0;
-}
-
-.timestamp {
-  color: #2af598; /* neon green */
-  font-weight: bold;
-}
-.message {
-  color: #e4e4f7;
+  white-space: pre-wrap;
 }
   </style>
+
 </head>
+
 <body>
-  <h1>InsightTracker — Dashboard</h1>
+  <div class="container">
 
-  <div>
-    <input id="url" placeholder="http://localhost:8000/">
-    <button id="addBtn">Add target</button>
-    <button id="runBtn">Run check now</button>
-    <button id="startBtn">Start auto (30s)</button>
-    <button id="stopBtn">Stop auto</button>
-    <button id="clearBtn">Clear Alerts</button>
+    <h1>InsightTracker — Dashboard</h1>
+
+    <div class="controls">
+      <input id="url" placeholder="http://localhost:8000/">
+      <button id="addBtn">Add target</button>
+      <button id="runBtn">Run check now</button>
+      <button id="startBtn">Start auto (30s)</button>
+      <button id="stopBtn">Stop auto</button>
+      <button id="clearBtn">Clear Alerts</button>
+    </div>
+
+    <h3>Tracked Targets</h3>
+    <ul id="targets"></ul>
+
+    <h3>Recent Alerts</h3>
+    <div id="alerts" class="alerts-box">No alerts yet.</div>
+
   </div>
-
-  <h3>Tracked Targets</h3>
-  <ul id="targets"></ul>
-
-  <h3>Recent Alerts</h3>
-  <div id="alerts">No alerts yet.</div>
 
   <script src="/static/app.js"></script>
 </body>
 </html>
-

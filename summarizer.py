@@ -1,42 +1,31 @@
-import os
-from dotenv import load_dotenv # type: ignore
-import openai # type: ignore
-import time
-
-# Load .env
-load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
-
-# Import exceptions correctly
-from openai import OpenAIError, RateLimitError # type: ignore
+import difflib
 
 def summarize_change(prev_text: str, new_text: str) -> str:
-    """Summarize the difference between previous and new text using OpenAI."""
-    
+    """
+    Free offline summarizer.
+    Uses difflib to detect what changed.
+    Not as poetic as GPT, but costs nothing.
+    """
     if prev_text == new_text:
         return ""
 
-    prompt = f"Summarize the difference between:\nPrevious:\n{prev_text}\n\nNew:\n{new_text}\n"
+    differ = difflib.ndiff(prev_text.split(), new_text.split())
+    added = []
+    removed = []
 
-    # Retry logic for rate limiting
-    for attempt in range(5):
-        try:
-            response = openai.chat.completions.create(
-                model="gpt-3.5-turbo",
-                messages=[
-                    {"role": "system", "content": "You are a helpful assistant that summarizes text changes."},
-                    {"role": "user", "content": prompt}
-                ],
-                temperature=0.2,
-                max_tokens=80
-            )
-            return response.choices[0].message.content.strip()
-        except RateLimitError:
-            wait_time = 2 ** attempt
-            print(f"Rate limit hit. Retrying in {wait_time}s...")
-            time.sleep(wait_time)
-        except OpenAIError as e:
-            print("OpenAI API error:", e)
-            return "Error: Unable to summarize changes."
-    
-    return "Error: Out of retries due to rate limiting."
+    for line in differ:
+        if line.startswith("+ "):
+            added.append(line[2:])
+        elif line.startswith("- "):
+            removed.append(line[2:])
+
+    summary_parts = []
+    if removed:
+        summary_parts.append(f"Removed: {' '.join(removed[:20])}...")
+    if added:
+        summary_parts.append(f"Added: {' '.join(added[:20])}...")
+
+    if not summary_parts:
+        return "Minor formatting or whitespace changes detected."
+
+    return " | ".join(summary_parts)
