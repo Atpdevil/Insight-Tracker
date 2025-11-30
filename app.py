@@ -29,8 +29,7 @@ async def api_add_target(request: Request):
     url = payload.get("url")
     if not url:
         return JSONResponse({"error": "missing URL"}, status_code=400)
-
-    t = {"url": url, "id": url}
+    t = {"url": url}
     monitor_engine.add_target(t)
     return {"ok": True, "target": t}
 

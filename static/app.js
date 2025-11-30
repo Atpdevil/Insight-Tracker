@@ -22,7 +22,7 @@ async function loadTargets() {
 
   list.innerHTML = '';
 
-  (data || []).forEach(t => {
+(data || []).forEach(t => {
     const li = document.createElement('li');
     li.textContent = t.url;
     list.appendChild(li);
