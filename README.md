@@ -128,6 +128,3 @@ python monitor.py
 - MIT License – free to use and modify.
 
 ---
-👉 This README explains **what it is, how it works, how to run it locally, and how others can try it**.  
-
----
