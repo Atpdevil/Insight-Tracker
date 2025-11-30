@@ -71,7 +71,7 @@ python -m venv venv
 
 ```bash
 source venv/bin/activate   # Mac/Linux
-venv\Scripts\activate      # Windows
+.venv\Scripts\Activate.ps1     # Windows
 ```
 
 ### 3️⃣ Install dependencies
