@@ -31,6 +31,7 @@ Instead of manually checking competitor sites, the agent watches them for you.
 5. **Dark/Light Theming** – The interface can be customized with different color themes  
 
 **Example Demo Flow (as shown in the video):**
+
 - Add a competitor URL in the dashboard  
 - Run the monitor → script detects changes  
 - Recent Alerts instantly show what changed  
@@ -38,7 +39,8 @@ Instead of manually checking competitor sites, the agent watches them for you.
 ---
 
 ## Project Structure
-```
+
+```bash
  competitive-intel-tracker
 ┣  monitor.py # Main monitoring script
 ┣  server.py # Web dashboard (Flask/HTTP server)
@@ -46,47 +48,65 @@ Instead of manually checking competitor sites, the agent watches them for you.
 ┣  static/ # CSS themes & styling
 ┗  README.md
 ```
+
 ---
 
 ## Getting Started
 
 ### 1️⃣ Clone the repository
+
 ```bash
 git clone https://github.com/<your-username>/competitive-intel-tracker.git
 ```
-```
+
+```bash
 cd competitive-intel-tracker
 ```
+
 ### 2️⃣ Create a virtual environment
-```
+
+```bash
 python -m venv venv
 ```
-```
+
+```bash
 source venv/bin/activate   # Mac/Linux
 venv\Scripts\activate      # Windows
 ```
+
 ### 3️⃣ Install dependencies
-```
+
+```bash
 pip install -r requirements.txt
 ```
+
 ### 4️⃣ Use Three terminals
+
 1. On First Terminal Run :
-```
+
+```bash
 cd demo-site
 python -m http.server 8000
 ```
-2. On Second Terminal :
-```
+
+On Second Terminal :
+
+```bash
 uvicorn app:app --reload --port 8500
 ```
+
 ### 5️⃣ Start monitoring
-3. In Third Terminal :
-```
+
+In Third Terminal :
+
+```bash
 python monitor.py
 ```
+
 ---
 
 **This will:**
+
 - Continuously fetch target links
 - Compare with previous versions
 - Generate alerts when content changes
@@ -104,7 +124,9 @@ python monitor.py
 - Want to improve this agent? Fork it, clone it, and send a PR!
 
 ### License
+
 - MIT License – free to use and modify.
+
 ---
 👉 This README explains **what it is, how it works, how to run it locally, and how others can try it**.  
 

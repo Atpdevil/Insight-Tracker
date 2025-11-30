@@ -1,6 +1,6 @@
 import os
-from dotenv import load_dotenv
-import openai
+from dotenv import load_dotenv # type: ignore
+import openai # type: ignore
 import time
 
 # Load .env
@@ -8,7 +8,7 @@ load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Import exceptions correctly
-from openai import OpenAIError, RateLimitError
+from openai import OpenAIError, RateLimitError # type: ignore
 
 def summarize_change(prev_text: str, new_text: str) -> str:
     """Summarize the difference between previous and new text using OpenAI."""
