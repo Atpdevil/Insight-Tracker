@@ -102,17 +102,3 @@ window.addEventListener('load', () => {
   loadAlerts();
   setInterval(loadAlerts, 5000);
 });
-
-document.getElementById("clearBtn").addEventListener("click", async () => {
-  const res = await fetch("/api/clear-all", { method: "POST" });
-  const data = await res.json();
-
-  if (data.ok) {
-    // refresh UI
-    await loadTargets();
-    await loadAlerts();
-    alert("All alerts and targets cleared!");
-  } else {
-    alert("Failed to clear data.");
-  }
-});
