@@ -82,7 +82,10 @@ def check_once():
             new_alerts.append(alert)
             # append to alerts.log
             with open(ALERTS_FILE, "a", encoding="utf-8") as f:
-                f.write(f"[{ts}] {tid} {url} -> {summary}\n")
+                if tid == url:
+                    f.write(f"[{ts}] {url} -> {summary}\n")
+                else:
+                    f.write(f"[{ts}] {tid} ({url}) -> {summary}\n")
             # update state
             state[tid] = {"hash": h, "text": txt, "last_seen": time.time()}
         else:
