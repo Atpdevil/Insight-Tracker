@@ -1,4 +1,11 @@
-.env
+# Logs and Data
 alerts.log
-targets.json
 state.json
+targets.json
+
+# Environment
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
